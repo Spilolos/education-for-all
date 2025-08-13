@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SmartStudy – Course Notes + Quiz</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen">
+  <div id="authWrapper" class="min-h-screen flex items-center justify-center p-4">
+    <div class="w-full max-w-md bg-white rounded-2xl shadow-md p-6">
+      <h1 class="text-2xl font-bold text-center mb-4">SmartStudy</h1>
+      <p class="text-center text-sm text-gray-600 mb-6">Sign in to manage courses, notes & quizzes.</p>
+
+      <div class="flex mb-4 border rounded-xl overflow-hidden">
+        <button id="btnShowLogin" class="flex-1 py-2 font-medium bg-gray-100">Login</button>
+        <button id="btnShowRegister" class="flex-1 py-2 font-medium">Register</button>
+      </div>
+
+      <form id="loginForm" class="space-y-3">
+        <input id="loginEmail" type="email" class="w-full input" placeholder="Email" required />
+        <input id="loginPass" type="password" class="w-full input" placeholder="Password" required />
+        <button class="btn-primary w-full">Login</button>
+        <p id="loginError" class="text-red-600 text-sm hidden"></p>
+      </form>
+
+      <form id="registerForm" class="space-y-3 hidden">
+        <input id="regName" type="text" class="w-full input" placeholder="Full name" required />
+        <input id="regEmail" type="email" class="w-full input" placeholder="Email" required />
+        <input id="regPass" type="password" class="w-full input" placeholder="Password (min 6 chars)" minlength="6" required />
+        <button class="btn-primary w-full">Create account</button>
+        <p id="registerError" class="text-red-600 text-sm hidden"></p>
+      </form>
+    </div>
+  </div>
+
+  <div id="app" class="hidden">
+    <header class="bg-green-600 text-white">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span class="inline-block w-8 h-8 rounded-full bg-white/20 grid place-items-center font-bold">S</span>
+          <h1 class="text-lg font-semibold">SmartStudy</h1>
+        </div>
+        <div class="flex items-center gap-3">
+          <span id="onlineIndicator" class="text-sm opacity-90">Offline</span>
+          <button id="btnLogout" class="px-3 py-1 rounded-full bg-white text-green-700 text-sm font-semibold">Logout</button>
+        </div>
+      </div>
+    </header>
+
+    <nav class="bg-white border-b">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="flex overflow-x-auto gap-2 py-2">
+          <button data-view="dashboard" class="tab active">Dashboard</button>
+          <button data-view="courses" class="tab">Courses</button>
+          <button data-view="notes" class="tab">Notes</button>
+          <button data-view="quizzes" class="tab">Quizzes</button>
+          <button data-view="profile" class="tab">Profile</button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto p-4 space-y-6">
+      <section id="view-dashboard" class="view">
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="card">
+            <h3 class="card-title">Quick Stats</h3>
+            <div class="grid grid-cols-3 text-center gap-2">
+              <div class="stat"><div class="stat-num" id="statCourses">0</div><div class="stat-label">Courses</div></div>
+              <div class="stat"><div class="stat-num" id="statNotes">0</div><div class="stat-label">Notes</div></div>
+              <div class="stat"><div class="stat-num" id="statQuizzes">0</div><div class="stat-label">Quizzes</div></div>
+            </div>
+          </div>
+          <div class="card md:col-span-2">
+            <h3 class="card-title">Motivation</h3>
+            <p id="quoteBox" class="text-gray-700">Loading a quote…</p>
+            <div class="mt-3 flex gap-2">
+              <button id="btnNewQuote" class="btn-outline">New Quote</button>
+              <button id="btnExport" class="btn-outline">Export Data</button>
+              <label class="btn-outline cursor-pointer">
+                Import Data <input id="importFile" type="file" accept="application/json" class="hidden" />
+              </label>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="view-courses" class="view hidden">
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="text-lg font-semibold">Your Courses</h3>
+          <button id="btnAddCourse" class="btn-primary">Add Course</button>
+        </div>
+        <div id="courseList" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3"></div>
+      </section>
+
+      <section id="view-notes" class="view hidden">
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="text-lg font-semibold">Notes</h3>
+          <button id="btnAddNote" class="btn-primary">Add Note</button>
+        </div>
+        <div id="noteList" class="grid md:grid-cols-2 gap-3"></div>
+      </section>
+
+      <section id="view-quizzes" class="view hidden">
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="text-lg font-semibold">Quizzes</h3>
+          <button id="btnAddQuiz" class="btn-primary">Add Quiz</button>
+        </div>
+        <div id="quizList" class="grid md:grid-cols-2 gap-3"></div>
+
+        <div id="quizPlay" class="card hidden mt-4">
+          <div class="flex items-center justify-between">
+            <h4 class="card-title">Play Quiz</h4>
+            <button id="btnClosePlay" class="btn-outline text-sm">Close</button>
+          </div>
+          <div id="quizQuestionWrap" class="mt-3"></div>
+          <div class="flex items-center justify-between mt-3">
+            <div id="quizProgress" class="text-sm text-gray-600"></div>
+            <button id="btnNextQ" class="btn-primary">Next</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="view-profile" class="view hidden">
+        <div class="card max-w-lg">
+          <h3 class="card-title">Profile</h3>
+          <div class="space-y-2">
+            <div><span class="label">Name:</span> <span id="profName"></span></div>
+            <div><span class="label">Email:</span> <span id="profEmail"></span></div>
+            <div class="mt-3"><button id="btnSyncNow" class="btn-outline">Sync Now</button></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.api.js"></script>
+  <script>
+    if('serviceWorker' in navigator){
+      navigator.serviceWorker.register('sw.js').then(()=>console.log('SW registered')).catch(console.error);
+    }
+  </script>
+</body>
+</html>
