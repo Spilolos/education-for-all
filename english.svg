@@ -1,0 +1,11 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="120" height="120" rx="12" fill="#f59e0b"/>
+  <rect x="30" y="25" width="60" height="70" rx="4" fill="white" opacity="0.9"/>
+  <rect x="35" y="30" width="50" height="60" rx="2" fill="#f59e0b" opacity="0.1"/>
+  <text x="60" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#f59e0b">A</text>
+  <text x="60" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#f59e0b">B</text>
+  <text x="60" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#f59e0b">C</text>
+  <path d="M25 35L35 35" stroke="white" stroke-width="2" opacity="0.8"/>
+  <path d="M25 50L35 50" stroke="white" stroke-width="2" opacity="0.8"/>
+  <path d="M25 65L35 65" stroke="white" stroke-width="2" opacity="0.8"/>
+</svg>
