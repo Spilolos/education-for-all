@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Ghanaian History | EduGhana</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="icon" href="data:," />
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+		body { font-family: 'Poppins', sans-serif; background-color: #f7fafc; }
+		.note-card { background: white; border: 1px solid #e5e7eb; }
+	</style>
+</head>
+<body class="min-h-screen">
+	<header class="bg-green-600 text-white shadow-md">
+		<div class="container mx-auto px-4 py-4">
+			<div class="flex justify-between items-center">
+				<div class="flex items-center space-x-2">
+					<img src="images/logo.svg" alt="EduGhana Logo" class="w-8 h-8" onerror="this.style.display='none'">
+					<a href="index.html" class="font-bold">EduGhana</a>
+				</div>
+				<nav class="hidden md:block">
+					<ul class="flex space-x-6">
+						<li><a href="index.html#subjects" class="hover:underline">All Subjects</a></li>
+						<li><a href="math.html" class="hover:underline">Math</a></li>
+						<li><a href="science.html" class="hover:underline">Science</a></li>
+						<li><a href="english.html" class="hover:underline">English</a></li>
+						<li><a class="hover:underline text-white/90">History</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+
+	<main class="container mx-auto px-4 py-10">
+		<div class="flex items-center mb-6">
+			<img src="images/history.svg" alt="History" class="w-12 h-12 mr-4" onerror="this.style.display='none'">
+			<h1 class="text-3xl font-bold text-gray-800">Ghanaian History Notes</h1>
+		</div>
+		<div class="grid md:grid-cols-3 gap-6 mb-10">
+			<div class="note-card rounded-xl p-5">
+				<h2 class="font-semibold text-lg mb-2">1) Pre-colonial States</h2>
+				<ul class="text-gray-700 list-disc pl-5 space-y-1">
+					<li>Ashanti Empire: powerful centralized state; known for gold trade.</li>
+					<li>Northern kingdoms engaged in trans-Saharan trade.</li>
+				</ul>
+			</div>
+			<div class="note-card rounded-xl p-5">
+				<h2 class="font-semibold text-lg mb-2">2) Colonial Era</h2>
+				<ul class="text-gray-700 list-disc pl-5 space-y-1">
+					<li>British colonized the Gold Coast in the 19th–20th centuries.</li>
+					<li>Resistance movements sought self-rule and economic rights.</li>
+				</ul>
+			</div>
+			<div class="note-card rounded-xl p-5">
+				<h2 class="font-semibold text-lg mb-2">3) Independence</h2>
+				<ul class="text-gray-700 list-disc pl-5 space-y-1">
+					<li>Led by Kwame Nkrumah, Ghana gained independence in 1957.</li>
+					<li>Ghana was the first sub-Saharan African colony to gain independence.</li>
+				</ul>
+			</div>
+		</div>
+
+		<h2 class="text-2xl font-bold mb-4 text-gray-800">History Quiz</h2>
+		<div id="quizApp"></div>
+	</main>
+
+	<script>
+	window.quizData = {
+		title: 'Ghanaian History Quiz',
+		questions: [
+			{
+				prompt: 'Ghana gained independence in which year?',
+				options: [
+					{ text: '1957', correct: true },
+					{ text: '1960' },
+					{ text: '1945' },
+					{ text: '1975' }
+				],
+				explanation: 'Ghana became independent from Britain on March 6, 1957.'
+			},
+			{
+				prompt: 'Which empire was known for gold trade and centralized power?',
+				options: [
+					{ text: 'Ashanti Empire', correct: true },
+					{ text: 'Roman Empire' },
+					{ text: 'Mongol Empire' },
+					{ text: 'Mali Empire' }
+				],
+				explanation: 'The Ashanti Empire in modern-day Ghana was renowned for its gold and governance.'
+			},
+			{
+				prompt: 'Who led Ghana to independence?',
+				options: [
+					{ text: 'Kwame Nkrumah', correct: true },
+					{ text: 'Nelson Mandela' },
+					{ text: 'Julius Nyerere' },
+					{ text: 'Jomo Kenyatta' }
+				],
+				explanation: 'Kwame Nkrumah was the prime minister and later the first president of Ghana.'
+			},
+			{
+				prompt: 'What was Ghana called during the colonial period?',
+				options: [
+					{ text: 'Gold Coast', correct: true },
+					{ text: 'Ivory Coast' },
+					{ text: 'Slave Coast' },
+					{ text: 'Grain Coast' }
+				],
+				explanation: 'The British called the territory "Gold Coast" due to its abundant gold resources.'
+			},
+			{
+				prompt: 'Ghana was the first sub-Saharan African colony to:',
+				options: [
+					{ text: 'Gain independence from colonial rule', correct: true },
+					{ text: 'Discover gold' },
+					{ text: 'Establish a university' },
+					{ text: 'Join the United Nations' }
+				],
+				explanation: 'Ghana was the first sub-Saharan African colony to gain independence, setting an example for other African nations.'
+			}
+		]
+	};
+	</script>
+	<script defer src="quiz.js"></script>
+</body>
+</html>

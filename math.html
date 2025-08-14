@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Mathematics | EduGhana</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="icon" href="data:," />
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+		body { font-family: 'Poppins', sans-serif; background-color: #f7fafc; }
+		.note-card { background: white; border: 1px solid #e5e7eb; }
+	</style>
+</head>
+<body class="min-h-screen">
+	<header class="bg-green-600 text-white shadow-md">
+		<div class="container mx-auto px-4 py-4">
+			<div class="flex justify-between items-center">
+				<div class="flex items-center space-x-2">
+					<img src="images/logo.svg" alt="EduGhana Logo" class="w-8 h-8" onerror="this.style.display='none'">
+					<a href="index.html" class="font-bold">EduGhana</a>
+				</div>
+				<nav class="hidden md:block">
+					<ul class="flex space-x-6">
+						<li><a href="index.html#subjects" class="hover:underline">All Subjects</a></li>
+						<li><a class="hover:underline text-white/90">Math</a></li>
+						<li><a href="science.html" class="hover:underline">Science</a></li>
+						<li><a href="english.html" class="hover:underline">English</a></li>
+						<li><a href="history.html" class="hover:underline">History</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+
+	<main class="container mx-auto px-4 py-10">
+		<div class="flex items-center mb-6">
+			<img src="images/math.svg" alt="Mathematics" class="w-12 h-12 mr-4" onerror="this.style.display='none'">
+			<h1 class="text-3xl font-bold text-gray-800">Mathematics Notes</h1>
+		</div>
+		<div class="grid md:grid-cols-3 gap-6 mb-10">
+			<div class="note-card rounded-xl p-5">
+				<h2 class="font-semibold text-lg mb-2">1) Number Concepts</h2>
+				<ul class="text-gray-700 list-disc pl-5 space-y-1">
+					<li>Fractions: a/b with b ≠ 0. Simplify by dividing by the GCD.</li>
+					<li>Percent: percent = fraction × 100%.</li>
+					<li>Order of operations: PEMDAS (Parentheses, Exponents, Multiplication/Division, Addition/Subtraction).</li>
+				</ul>
+			</div>
+			<div class="note-card rounded-xl p-5">
+				<h2 class="font-semibold text-lg mb-2">2) Algebra Basics</h2>
+				<ul class="text-gray-700 list-disc pl-5 space-y-1">
+					<li>Linear equation: ax + b = c → x = (c - b)/a, a ≠ 0.</li>
+					<li>Like terms combine: 2x + 3x = 5x.</li>
+					<li>Distributive law: a(b + c) = ab + ac.</li>
+				</ul>
+			</div>
+			<div class="note-card rounded-xl p-5">
+				<h2 class="font-semibold text-lg mb-2">3) Geometry</h2>
+				<ul class="text-gray-700 list-disc pl-5 space-y-1">
+					<li>Triangle angles sum to 180°.</li>
+					<li>Area of rectangle = lw; triangle = 1/2 bh; circle = πr².</li>
+					<li>Perimeter is the sum of side lengths.</li>
+				</ul>
+			</div>
+		</div>
+
+		<h2 class="text-2xl font-bold mb-4 text-gray-800">Mathematics Quiz</h2>
+		<div id="quizApp"></div>
+	</main>
+
+	<script>
+	window.quizData = {
+		title: 'Mathematics Quiz',
+		questions: [
+			{
+				prompt: 'What is the value of π (pi) rounded to two decimal places?',
+				options: [
+					{ text: '3.14', correct: true },
+					{ text: '3.16' },
+					{ text: '3.12' },
+					{ text: '3.18' }
+				],
+				explanation: 'π ≈ 3.14159, which rounds to 3.14 to two decimal places.'
+			},
+			{
+				prompt: 'Solve for x: 3x + 6 = 21',
+				options: [
+					{ text: 'x = 5', correct: true },
+					{ text: 'x = 9' },
+					{ text: 'x = 7' },
+					{ text: 'x = 3' }
+				],
+				explanation: '3x = 15, so x = 15/3 = 5.'
+			},
+			{
+				prompt: 'Area of a rectangle with length 8 and width 5 is:',
+				options: [
+					{ text: '40', correct: true },
+					{ text: '26' },
+					{ text: '13' },
+					{ text: '64' }
+				],
+				explanation: 'Area = l × w = 8 × 5 = 40.'
+			},
+			{
+				prompt: 'What is 25% of 80?',
+				options: [
+					{ text: '20', correct: true },
+					{ text: '25' },
+					{ text: '30' },
+					{ text: '15' }
+				],
+				explanation: '25% = 0.25, so 0.25 × 80 = 20.'
+			},
+			{
+				prompt: 'Simplify: 2(x + 3) + 4x',
+				options: [
+					{ text: '6x + 6', correct: true },
+					{ text: '6x + 3' },
+					{ text: '2x + 6' },
+					{ text: '6x + 2' }
+				],
+				explanation: '2(x + 3) + 4x = 2x + 6 + 4x = 6x + 6.'
+			}
+		]
+	};
+	</script>
+	<script defer src="quiz.js"></script>
+</body>
+</html>

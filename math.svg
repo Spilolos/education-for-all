@@ -1,0 +1,10 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="120" height="120" rx="12" fill="#3b82f6"/>
+  <text x="60" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">∑</text>
+  <text x="60" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white">π</text>
+  <text x="60" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">∞</text>
+  <circle cx="30" cy="30" r="3" fill="white" opacity="0.8"/>
+  <circle cx="90" cy="30" r="3" fill="white" opacity="0.8"/>
+  <circle cx="30" cy="90" r="3" fill="white" opacity="0.8"/>
+  <circle cx="90" cy="90" r="3" fill="white" opacity="0.8"/>
+</svg>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Science | EduGhana</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="icon" href="data:," />
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+		body { font-family: 'Poppins', sans-serif; background-color: #f7fafc; }
+		.note-card { background: white; border: 1px solid #e5e7eb; }
+	</style>
+</head>
+<body class="min-h-screen">
+	<header class="bg-green-600 text-white shadow-md">
+		<div class="container mx-auto px-4 py-4">
+			<div class="flex justify-between items-center">
+				<div class="flex items-center space-x-2">
+					<img src="images/logo.svg" alt="EduGhana Logo" class="w-8 h-8" onerror="this.style.display='none'">
+					<a href="index.html" class="font-bold">EduGhana</a>
+				</div>
+				<nav class="hidden md:block">
+					<ul class="flex space-x-6">
+						<li><a href="index.html#subjects" class="hover:underline">All Subjects</a></li>
+						<li><a href="math.html" class="hover:underline">Math</a></li>
+						<li><a class="hover:underline text-white/90">Science</a></li>
+						<li><a href="english.html" class="hover:underline">English</a></li>
+						<li><a href="history.html" class="hover:underline">History</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+
+	<main class="container mx-auto px-4 py-10">
+		<div class="flex items-center mb-6">
+			<img src="images/science.svg" alt="Science" class="w-12 h-12 mr-4" onerror="this.style.display='none'">
+			<h1 class="text-3xl font-bold text-gray-800">Science Notes</h1>
+		</div>
+		<div class="grid md:grid-cols-3 gap-6 mb-10">
+			<div class="note-card rounded-xl p-5">
+				<h2 class="font-semibold text-lg mb-2">1) Biology</h2>
+				<ul class="text-gray-700 list-disc pl-5 space-y-1">
+					<li>Cells are the basic unit of life.</li>
+					<li>Photosynthesis: plants convert CO₂ and H₂O into glucose and O₂ using sunlight.</li>
+					<li>Human systems: circulatory transports nutrients and oxygen; respiratory exchanges gases.</li>
+				</ul>
+			</div>
+			<div class="note-card rounded-xl p-5">
+				<h2 class="font-semibold text-lg mb-2">2) Physics</h2>
+				<ul class="text-gray-700 list-disc pl-5 space-y-1">
+					<li>Newton's First Law: objects maintain motion unless acted upon.</li>
+					<li>Speed = distance/time.</li>
+					<li>Energy conservation: energy cannot be created or destroyed.</li>
+				</ul>
+			</div>
+			<div class="note-card rounded-xl p-5">
+				<h2 class="font-semibold text-lg mb-2">3) Chemistry</h2>
+				<ul class="text-gray-700 list-disc pl-5 space-y-1">
+					<li>Atoms consist of protons, neutrons, and electrons.</li>
+					<li>Periodic table groups elements by properties.</li>
+					<li>Chemical reactions rearrange atoms into new substances.</li>
+				</ul>
+			</div>
+		</div>
+
+		<h2 class="text-2xl font-bold mb-4 text-gray-800">Science Quiz</h2>
+		<div id="quizApp"></div>
+	</main>
+
+	<script>
+	window.quizData = {
+		title: 'Science Quiz',
+		questions: [
+			{
+				prompt: 'Which organelle is responsible for photosynthesis?',
+				options: [
+					{ text: 'Chloroplast', correct: true },
+					{ text: 'Mitochondrion' },
+					{ text: 'Nucleus' },
+					{ text: 'Ribosome' }
+				],
+				explanation: 'Chloroplasts contain chlorophyll and perform photosynthesis in plant cells.'
+			},
+			{
+				prompt: 'Speed is defined as:',
+				options: [
+					{ text: 'Distance divided by time', correct: true },
+					{ text: 'Time divided by distance' },
+					{ text: 'Mass times acceleration' },
+					{ text: 'Energy per unit time' }
+				],
+				explanation: 'Speed = distance/time.'
+			},
+			{
+				prompt: 'Which subatomic particles are found in the nucleus?',
+				options: [
+					{ text: 'Protons and neutrons', correct: true },
+					{ text: 'Electrons and protons' },
+					{ text: 'Neutrons and electrons' },
+					{ text: 'Only electrons' }
+				],
+				explanation: 'The nucleus contains protons and neutrons; electrons orbit around it.'
+			},
+			{
+				prompt: 'What is the chemical formula for water?',
+				options: [
+					{ text: 'H₂O', correct: true },
+					{ text: 'CO₂' },
+					{ text: 'O₂' },
+					{ text: 'H₂' }
+				],
+				explanation: 'Water consists of two hydrogen atoms and one oxygen atom: H₂O.'
+			},
+			{
+				prompt: 'According to Newton\'s First Law, an object will:',
+				options: [
+					{ text: 'Stay at rest or in motion unless acted upon by a force', correct: true },
+					{ text: 'Always slow down due to friction' },
+					{ text: 'Move faster when pushed' },
+					{ text: 'Change direction automatically' }
+				],
+				explanation: 'Newton\'s First Law states that objects maintain their state of motion unless acted upon by an external force.'
+			}
+		]
+	};
+	</script>
+	<script defer src="quiz.js"></script>
+</body>
+</html>

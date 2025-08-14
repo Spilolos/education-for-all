@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>English & Literature | EduGhana</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="icon" href="data:," />
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+		body { font-family: 'Poppins', sans-serif; background-color: #f7fafc; }
+		.note-card { background: white; border: 1px solid #e5e7eb; }
+	</style>
+</head>
+<body class="min-h-screen">
+	<header class="bg-green-600 text-white shadow-md">
+		<div class="container mx-auto px-4 py-4">
+			<div class="flex justify-between items-center">
+				<div class="flex items-center space-x-2">
+					<img src="images/logo.svg" alt="EduGhana Logo" class="w-8 h-8" onerror="this.style.display='none'">
+					<a href="index.html" class="font-bold">EduGhana</a>
+				</div>
+				<nav class="hidden md:block">
+					<ul class="flex space-x-6">
+						<li><a href="index.html#subjects" class="hover:underline">All Subjects</a></li>
+						<li><a href="math.html" class="hover:underline">Math</a></li>
+						<li><a href="science.html" class="hover:underline">Science</a></li>
+						<li><a class="hover:underline text-white/90">English</a></li>
+						<li><a href="history.html" class="hover:underline">History</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+
+	<main class="container mx-auto px-4 py-10">
+		<div class="flex items-center mb-6">
+			<img src="images/english.svg" alt="English" class="w-12 h-12 mr-4" onerror="this.style.display='none'">
+			<h1 class="text-3xl font-bold text-gray-800">English & Literature Notes</h1>
+		</div>
+		<div class="grid md:grid-cols-3 gap-6 mb-10">
+			<div class="note-card rounded-xl p-5">
+				<h2 class="font-semibold text-lg mb-2">1) Grammar</h2>
+				<ul class="text-gray-700 list-disc pl-5 space-y-1">
+					<li>Noun: a person, place, or thing. Verb: an action or state.</li>
+					<li>Subject-verb agreement: singular subject takes singular verb (The boy runs).</li>
+					<li>Tenses express time: past, present, future.</li>
+				</ul>
+			</div>
+			<div class="note-card rounded-xl p-5">
+				<h2 class="font-semibold text-lg mb-2">2) Comprehension</h2>
+				<ul class="text-gray-700 list-disc pl-5 space-y-1">
+					<li>Identify main idea vs. supporting details.</li>
+					<li>Use context clues to infer word meanings.</li>
+					<li>Summarize passages briefly in your own words.</li>
+				</ul>
+			</div>
+			<div class="note-card rounded-xl p-5">
+				<h2 class="font-semibold text-lg mb-2">3) Literature</h2>
+				<ul class="text-gray-700 list-disc pl-5 space-y-1">
+					<li>Plot: sequence of events. Setting: time and place.</li>
+					<li>Characterization shows personality through actions and dialogue.</li>
+					<li>Theme is the underlying message of a text.</li>
+				</ul>
+			</div>
+		</div>
+
+		<h2 class="text-2xl font-bold mb-4 text-gray-800">English Quiz</h2>
+		<div id="quizApp"></div>
+	</main>
+
+	<script>
+	window.quizData = {
+		title: 'English Quiz',
+		questions: [
+			{
+				prompt: 'Choose the sentence with correct subject-verb agreement:',
+				options: [
+					{ text: 'The team are winning the match.' },
+					{ text: 'The team is winning the match.', correct: true },
+					{ text: 'The team be winning the match.' },
+					{ text: 'The team were winning the match.' }
+				],
+				explanation: '"Team" is treated as a singular collective noun in this context, so "is" is correct.'
+			},
+			{
+				prompt: 'The main idea of a paragraph is:',
+				options: [
+					{ text: 'A minor detail that adds color' },
+					{ text: 'A random fact about the author' },
+					{ text: 'The most important point the author wants to make', correct: true },
+					{ text: 'The longest sentence' }
+				],
+				explanation: 'The main idea summarizes the central point of the paragraph.'
+			},
+			{
+				prompt: 'In literature, "theme" refers to:',
+				options: [
+					{ text: 'The time and place of the story' },
+					{ text: 'The central message or insight', correct: true },
+					{ text: 'The order of events' },
+					{ text: 'The narrator\'s identity' }
+				],
+				explanation: 'Theme is the underlying message or insight the author conveys.'
+			},
+			{
+				prompt: 'Which word is a noun in the sentence: "The quick brown fox jumps over the lazy dog"?',
+				options: [
+					{ text: 'quick' },
+					{ text: 'fox', correct: true },
+					{ text: 'jumps' },
+					{ text: 'over' }
+				],
+				explanation: '"Fox" is a noun (a thing), while "quick" is an adjective, "jumps" is a verb, and "over" is a preposition.'
+			},
+			{
+				prompt: 'What is the past tense of the verb "run"?',
+				options: [
+					{ text: 'ran', correct: true },
+					{ text: 'runned' },
+					{ text: 'running' },
+					{ text: 'runs' }
+				],
+				explanation: 'The past tense of "run" is "ran" (irregular verb).'
+			}
+		]
+	};
+	</script>
+	<script defer src="quiz.js"></script>
+</body>
+</html>

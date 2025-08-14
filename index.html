@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>EduGhana - Learning for All</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="icon" href="data:," />
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+		body { font-family: 'Poppins', sans-serif; background-color: #f7fafc; }
+		.subject-card { transition: transform .3s, box-shadow .3s; }
+		.subject-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,.1); }
+	</style>
+</head>
+<body class="min-h-screen flex flex-col">
+	<header class="bg-green-600 text-white shadow-md">
+		<div class="container mx-auto px-4 py-4">
+			<div class="flex justify-between items-center">
+				<div class="flex items-center space-x-2">
+					<img src="images/logo.svg" alt="EduGhana Logo" class="w-8 h-8" onerror="this.style.display='none'">
+					<h1 class="text-xl font-bold">EduGhana</h1>
+				</div>
+				<nav class="hidden md:block">
+					<ul class="flex space-x-6">
+						<li><a href="#" class="hover:underline">Home</a></li>
+						<li><a href="#subjects" class="hover:underline">Subjects</a></li>
+						<li><a href="dashboard.html" class="hover:underline">Dashboard</a></li>
+					</ul>
+				</nav>
+				<div id="userContainer"></div>
+			</div>
+		</div>
+	</header>
+
+	<section id="home" class="py-12 bg-gradient-to-r from-green-500 to-green-700 text-white relative overflow-hidden">
+		<div class="absolute inset-0 bg-black/10"></div>
+		<div class="container mx-auto px-4 flex flex-col md:flex-row items-center relative z-10">
+			<div class="md:w-1/2 mb-8 md:mb-0">
+				<h2 class="text-3xl md:text-4xl font-bold mb-4">Education Without Boundaries</h2>
+				<p class="text-lg mb-6">Read concise notes and practice quizzes with instant feedback. Retry anytime and track your progress.</p>
+				<div class="flex space-x-3">
+					<a href="#subjects" class="bg-white text-green-700 px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition">Explore Subjects</a>
+					<a href="math.html" class="border-2 border-white text-white px-6 py-2 rounded-full font-medium hover:bg-white hover:text-green-700 transition">Start with Math</a>
+				</div>
+			</div>
+			<div class="md:w-1/2">
+				<div class="rounded-lg shadow-xl bg-white/10 p-8 backdrop-blur-sm">
+					<div class="flex items-center mb-4">
+						<img src="images/logo.svg" alt="EduGhana" class="w-12 h-12 mr-4" onerror="this.style.display='none'">
+						<div>
+							<p class="text-white/90 font-medium">Interactive learning platform with authentication and progress tracking.</p>
+						</div>
+					</div>
+					<p class="text-white/80 text-sm mt-2">✓ Per-subject notes, quizzes with explanations</p>
+					<p class="text-white/80 text-sm mt-1">✓ Progress tracking and personalized study tips</p>
+					<p class="text-white/80 text-sm mt-1">✓ Create and manage your study notes</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Authentication Section -->
+	<section id="authSection" class="py-8 bg-gray-50">
+		<div class="container mx-auto px-4">
+			<div id="authContainer"></div>
+		</div>
+	</section>
+
+	<section id="subjects" class="py-16 bg-white grow">
+		<div class="container mx-auto px-4">
+			<h2 class="text-2xl font-bold text-center mb-12">Explore Subjects</h2>
+			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+				<a href="math.html" class="subject-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100 block">
+					<div class="text-center p-4">
+						<img src="images/math.svg" alt="Mathematics" class="w-16 h-16 mx-auto mb-4" onerror="this.style.display='none'">
+					</div>
+					<div class="p-6 pt-0">
+						<h3 class="text-xl font-semibold mb-2 text-center">Mathematics</h3>
+						<p class="text-gray-600 mb-4 text-center">Numbers, Algebra, Geometry basics with practice questions.</p>
+						<div class="text-center">
+							<span class="text-green-700 font-medium">Open →</span>
+						</div>
+					</div>
+				</a>
+				<a href="science.html" class="subject-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100 block">
+					<div class="text-center p-4">
+						<img src="images/science.svg" alt="Science" class="w-16 h-16 mx-auto mb-4" onerror="this.style.display='none'">
+					</div>
+					<div class="p-6 pt-0">
+						<h3 class="text-xl font-semibold mb-2 text-center">Science</h3>
+						<p class="text-gray-600 mb-4 text-center">Biology, Physics, Chemistry fundamentals and quiz.</p>
+						<div class="text-center">
+							<span class="text-green-700 font-medium">Open →</span>
+						</div>
+					</div>
+				</a>
+				<a href="english.html" class="subject-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100 block">
+					<div class="text-center p-4">
+						<img src="images/english.svg" alt="English" class="w-16 h-16 mx-auto mb-4" onerror="this.style.display='none'">
+					</div>
+					<div class="p-6 pt-0">
+						<h3 class="text-xl font-semibold mb-2 text-center">English & Literature</h3>
+						<p class="text-gray-600 mb-4 text-center">Grammar and comprehension essentials with examples.</p>
+						<div class="text-center">
+							<span class="text-green-700 font-medium">Open →</span>
+						</div>
+					</div>
+				</a>
+				<a href="history.html" class="subject-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100 block">
+					<div class="text-center p-4">
+						<img src="images/history.svg" alt="History" class="w-16 h-16 mx-auto mb-4" onerror="this.style.display='none'">
+					</div>
+					<div class="p-6 pt-0">
+						<h3 class="text-xl font-semibold mb-2 text-center">Ghanaian History</h3>
+						<p class="text-gray-600 mb-4 text-center">From ancient kingdoms to independence.</p>
+						<div class="text-center">
+							<span class="text-green-700 font-medium">Open →</span>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<footer class="bg-gray-900 text-gray-300 py-10">
+		<div class="container mx-auto px-4 text-center">
+			<p class="text-sm">© 2025 EduGhana. All rights reserved.</p>
+		</div>
+	</footer>
+
+	<script src="auth.js"></script>
+</body>
+</html>
